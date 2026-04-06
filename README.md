@@ -1,6 +1,6 @@
 # Preceptress Health Style Guide
 
-A public, polished design-system repository for the Preceptress Health web experience.
+A public, polished design-system repository for the Preceptress.ai web experience.
 
 This repo packages the current visual language of the site into a clean, shareable foundation that can be used by:
 
