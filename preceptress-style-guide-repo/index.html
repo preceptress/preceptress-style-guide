@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preceptress Health — Style Guide</title>
+  <style>
+    :root {
+      --bg-0: #020814;
+      --bg-1: #071324;
+      --bg-2: #0b1c31;
+      --bg-3: #102742;
+      --panel: rgba(8, 23, 43, 0.9);
+      --panel-strong: rgba(10, 28, 51, 0.96);
+      --panel-soft: rgba(10, 22, 40, 0.72);
+      --line: rgba(121, 180, 255, 0.18);
+      --line-strong: rgba(121, 180, 255, 0.3);
+      --text: #eef4ff;
+      --muted: #9bb2cf;
+      --muted-2: #7590b3;
+      --blue: #5ab6ff;
+      --cyan: #6ae8ff;
+      --green: #29d3a2;
+      --teal: #48d6cf;
+      --gold: #f5cc67;
+      --amber: #ffc96b;
+      --danger: #ff7c8d;
+      --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.28);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 999px;
+      --maxw: 1320px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(84, 166, 255, 0.14), transparent 34%),
+        radial-gradient(circle at top right, rgba(41, 211, 162, 0.08), transparent 28%),
+        linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 28%, var(--bg-0) 100%);
+      line-height: 1.45;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(2, 8, 20, 0.68);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .topbar-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 8px 24px rgba(90, 182, 255, 0.25);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .nav a.active {
+      color: white;
+      border-color: rgba(90, 182, 255, 0.55);
+      background: linear-gradient(180deg, rgba(90,182,255,0.16), rgba(90,182,255,0.06));
+      box-shadow: 0 0 0 1px rgba(90,182,255,0.12) inset;
+    }
+
+    .hero {
+      padding: 38px 0 22px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-strong) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .panel-pad { padding: 28px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(106, 232, 255, 0.2);
+      background: rgba(106, 232, 255, 0.08);
+      color: #bceeff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+
+    h1 {
+      margin-top: 14px;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      max-width: 10ch;
+    }
+
+    .lede {
+      margin-top: 18px;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      color: white;
+      border-color: rgba(90, 182, 255, 0.65);
+      background: linear-gradient(135deg, rgba(90,182,255,0.95), rgba(58,133,255,0.92));
+      box-shadow: 0 12px 28px rgba(41, 110, 255, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .mission {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(11, 28, 49, 0.92), rgba(8, 20, 37, 0.92));
+      color: #d8e7fb;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(7, 21, 39, 0.9), rgba(8, 23, 44, 0.96));
+      border: 1px solid var(--line);
+      min-height: 160px;
+    }
+
+    .stat .label,
+    .mini-card .label,
+    .swatch .label,
+    .token .label {
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 10px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .stat .value {
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .stat p,
+    .mini-card p,
+    .section-intro,
+    .body-copy,
+    li,
+    .spec {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .terminal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: linear-gradient(180deg, rgba(13, 39, 64, 0.72), rgba(10, 28, 49, 0.34));
+    }
+
+    .terminal-head h3 {
+      font-size: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .terminal-head p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .pill-blue {
+      background: rgba(90, 182, 255, 0.12);
+      border-color: rgba(90, 182, 255, 0.25);
+      color: #cfeaff;
+    }
+
+    .pill-green {
+      background: rgba(41, 211, 162, 0.13);
+      border-color: rgba(41, 211, 162, 0.22);
+      color: #cbffef;
+    }
+
+    .pill-gold {
+      background: rgba(245, 204, 103, 0.13);
+      border-color: rgba(245, 204, 103, 0.25);
+      color: #fff0bf;
+    }
+
+    .terminal-body {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      min-height: 108px;
+    }
+
+    .list-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(8, 23, 44, 0.84), rgba(8, 20, 38, 0.96));
+    }
+
+    .list-card .title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .list-card .note {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 42ch;
+    }
+
+    .list-card .tag {
+      color: #dbe9ff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .section-card {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(7, 20, 37, 0.9), rgba(9, 24, 43, 0.96));
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      max-width: 18ch;
+    }
+
+    .section-intro {
+      margin-top: 10px;
+      max-width: 72ch;
+      line-height: 1.7;
+    }
+
+    .triple,
+    .quad {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .triple { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .quad { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(10, 26, 47, 0.9), rgba(7, 19, 35, 0.96));
+      min-height: 180px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(10, 26, 47, 0.86), rgba(7, 18, 33, 0.95));
+      border: 1px solid var(--line);
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(90,182,255,0.22), rgba(90,182,255,0.08));
+      border: 1px solid rgba(90, 182, 255, 0.28);
+      color: #d9efff;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .swatch {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .swatch-color {
+      height: 100px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .swatch-body {
+      padding: 14px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: #d5e4fa;
+    }
+
+    .type-scale {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .type-row:last-child { border-bottom: 0; }
+
+    .type-meta {
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .display-xl { font-size: clamp(52px, 8vw, 88px); line-height: 0.95; letter-spacing: -0.065em; font-weight: 800; }
+    .display-lg { font-size: clamp(38px, 5vw, 60px); line-height: 0.96; letter-spacing: -0.055em; font-weight: 800; }
+    .heading-lg { font-size: 32px; line-height: 1.04; letter-spacing: -0.045em; font-weight: 800; }
+    .heading-md { font-size: 24px; line-height: 1.1; letter-spacing: -0.035em; font-weight: 800; }
+    .body-lg { font-size: 16px; line-height: 1.7; color: var(--muted); }
+    .body-md { font-size: 14px; line-height: 1.7; color: var(--muted); }
+    .meta-sm { font-size: 11px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-2); font-weight: 800; }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .token {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(10,26,47,0.86), rgba(8,21,39,0.96));
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #d9e7fb;
+    }
+
+    .footer {
+      padding: 34px 0 60px;
+      color: var(--muted-2);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .triple,
+      .quad,
+      .palette,
+      .token-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid-2,
+      .mini-grid,
+      .triple,
+      .quad,
+      .palette,
+      .token-grid,
+      .type-row {
+        grid-template-columns: 1fr;
+      }
+
+      .list-card {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-pad,
+      .section-card {
+        padding: 20px;
+      }
+
+      h1 {
+        max-width: 12ch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">PH</div>
+        <div class="brand-copy">
+          <strong>Preceptress Health</strong>
+          <span>AI-first therapeutic discovery for overlooked interventions</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#brand">Brand</a>
+        <a href="#palette">Color</a>
+        <a href="#type">Type</a>
+        <a href="#components">Components</a>
+        <a href="#css" class="active">CSS Tokens</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="panel panel-pad">
+        <div class="eyebrow">Preceptress Health style system</div>
+        <h1>Deep-science UI with Bloomberg-grade clarity.</h1>
+        <p class="lede">
+          This design language is dark, modern, technical, and high-trust. It should feel like a live research terminal rather than a generic biotech marketing site: serious, luminous, data-first, and quietly ambitious.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#css">View CSS tokens</a>
+          <a class="btn btn-secondary" href="#components">See components</a>
+        </div>
+
+        <div class="mission">
+          <strong>Core tone:</strong> scientific intelligence, not startup hype. The interface should suggest signal detection, ranking, and evidence convergence. Use blue and cyan as the dominant luminous accents, green for confirmed signal, and gold for watch states.
+        </div>
+
+        <div class="grid-2">
+          <div class="stat">
+            <div class="label">Visual personality</div>
+            <div class="value">Calm + precise</div>
+            <p>Dense enough to feel powerful, clean enough for foundations, clinicians, and serious technical partners.</p>
+          </div>
+          <div class="stat">
+            <div class="label">Design goal</div>
+            <div class="value">Research terminal</div>
+            <p>Blend science credibility, modern systems design, and subtle cinematic polish without clutter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="terminal-head">
+          <div>
+            <h3>Terminal preview</h3>
+            <p>Example of the site language in component form</p>
+          </div>
+          <div class="pill pill-blue">Live research layer</div>
+        </div>
+        <div class="terminal-body">
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="label">Signal strength</div>
+              <div class="heading-md">Rising</div>
+              <p>Use compact cards with strong labels, dense copy, and sharp hierarchy.</p>
+            </div>
+            <div class="mini-card">
+              <div class="label">Narrative shift</div>
+              <div class="heading-md">Mechanism cluster</div>
+              <p>Every panel should look like it belongs to the same intelligence system.</p>
+            </div>
+          </div>
+
+          <div class="list-card">
+            <div class="pill pill-green">Signal detected</div>
+            <div>
+              <div class="title">Card anatomy</div>
+              <div class="note">Rounded panels, cool gradients, thin luminous borders, muted supporting text, and strong category labels.</div>
+            </div>
+            <div class="tag">High relevance</div>
+          </div>
+
+          <div class="list-card">
+            <div class="pill pill-gold">Watch closely</div>
+            <div>
+              <div class="title">Badge behavior</div>
+              <div class="note">Green is positive signal, gold is monitored uncertainty, blue is platform or live state.</div>
+            </div>
+            <div class="tag">Under-synthesized</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brand">
+      <div class="section-card">
+        <div class="eyebrow">Brand principles</div>
+        <h2 class="section-title">What the style should communicate.</h2>
+        <p class="section-intro">The site should feel like a serious instrument for reading scientific terrain. Every visual choice should reinforce trust, structure, and the sense that the platform is surfacing patterns hidden inside a very large body of research.</p>
+
+        <div class="triple">
+          <div class="card">
+            <h3>1. Scientific credibility</h3>
+            <p class="body-copy">Avoid loud consumer-health visuals. Use disciplined spacing, strong typography, subtle gradients, and restrained motion.</p>
+          </div>
+          <div class="card">
+            <h3>2. Data-rich confidence</h3>
+            <p class="body-copy">The interface should imply ranking, comparison, and live intelligence. Cards and chips should feel modular and machine-assisted.</p>
+          </div>
+          <div class="card">
+            <h3>3. Public-minded mission</h3>
+            <p class="body-copy">The tone is not luxury biotech or speculative VC theater. It is high-end, but in service of clarity and medicine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="palette">
+      <div class="section-card">
+        <div class="eyebrow">Color system</div>
+        <h2 class="section-title">A midnight research palette with luminous accents.</h2>
+        <p class="section-intro">The background stays in deep navy and near-black ranges. Accent color carries meaning, not decoration. Use the brightest tones sparingly so the interface keeps its authority.</p>
+
+        <div class="palette">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#020814"></div>
+            <div class="swatch-body">
+              <div class="label">Base background</div>
+              <div><strong>Midnight 900</strong></div>
+              <div class="mono">#020814</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#071324"></div>
+            <div class="swatch-body">
+              <div class="label">Primary panel field</div>
+              <div><strong>Midnight 800</strong></div>
+              <div class="mono">#071324</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#5ab6ff"></div>
+            <div class="swatch-body">
+              <div class="label">Primary accent</div>
+              <div><strong>Signal Blue</strong></div>
+              <div class="mono">#5AB6FF</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#6ae8ff"></div>
+            <div class="swatch-body">
+              <div class="label">Secondary accent</div>
+              <div><strong>Research Cyan</strong></div>
+              <div class="mono">#6AE8FF</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#29d3a2"></div>
+            <div class="swatch-body">
+              <div class="label">Positive signal</div>
+              <div><strong>Convergence Green</strong></div>
+              <div class="mono">#29D3A2</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f5cc67"></div>
+            <div class="swatch-body">
+              <div class="label">Watch state</div>
+              <div><strong>Evidence Gold</strong></div>
+              <div class="mono">#F5CC67</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#eef4ff"></div>
+            <div class="swatch-body">
+              <div class="label">Primary text</div>
+              <div><strong>Cloud White</strong></div>
+              <div class="mono">#EEF4FF</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#9bb2cf"></div>
+            <div class="swatch-body">
+              <div class="label">Secondary text</div>
+              <div><strong>Muted Slate</strong></div>
+              <div class="mono">#9BB2CF</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <div class="section-card">
+        <div class="eyebrow">Typography</div>
+        <h2 class="section-title">Big, compressed headlines. Calm, readable body text.</h2>
+        <p class="section-intro">Use a clean sans like Inter or a similarly neutral modern grotesk. Headlines should be large, tightly tracked, and slightly compressed through spacing, not novelty fonts.</p>
+
+        <div class="type-scale">
+          <div class="type-row">
+            <div class="type-meta">Display XL</div>
+            <div class="display-xl">Searching 200,000+ papers for therapies hiding in plain sight.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Display LG</div>
+            <div class="display-lg">The literature is too large, too fragmented, and too economically uneven to navigate by hand.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Heading LG</div>
+            <div class="heading-lg">A discovery engine modeled on our narrative velocity system.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Heading MD</div>
+            <div class="heading-md">We are not trying to replace scientists.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Body LG</div>
+            <div class="body-lg">Use body text at 15–16px for key explanatory sections. The site can be information-dense, but the text should still breathe. Keep max line length around 60–72 characters in narrative sections.</div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Meta SM</div>
+            <div class="meta-sm">AI-FIRST MEDICAL DISCOVERY · PLATFORM LAYERS · RESEARCH INTELLIGENCE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="section-card">
+        <div class="eyebrow">Components</div>
+        <h2 class="section-title">The reusable pieces that define the system.</h2>
+        <p class="section-intro">Cards should feel like modules inside a single operating system. The border, radius, background, spacing, and text hierarchy should remain consistent across sections.</p>
+
+        <div class="triple">
+          <div class="card">
+            <div class="eyebrow">Button rules</div>
+            <div class="actions" style="margin-top:16px;">
+              <span class="btn btn-primary">Primary action</span>
+              <span class="btn btn-secondary">Secondary action</span>
+            </div>
+            <p class="body-md" style="margin-top:14px;">Primary buttons use luminous blue fill. Secondary buttons stay transparent and rely on border contrast.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Chip rules</div>
+            <div class="actions" style="margin-top:16px;">
+              <span class="pill pill-blue">Live research layer</span>
+              <span class="pill pill-green">Signal detected</span>
+              <span class="pill pill-gold">Watch closely</span>
+            </div>
+            <p class="body-md" style="margin-top:14px;">Use chips for state, signal quality, or layer descriptions. Keep them compact and meaning-rich.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Surface rules</div>
+            <div class="mission" style="margin-top:16px;">Panels use subtle blue-black gradients, thin cool borders, and soft inner contrast rather than heavy drop shadows alone.</div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:18px;">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div>
+              <h3 style="font-size:18px; margin-bottom:6px;">Read at scale</h3>
+              <p class="body-md">Numbered process cards use a compact icon block on the left and text on the right. This reinforces method and flow.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div>
+              <h3 style="font-size:18px; margin-bottom:6px;">Detect convergence</h3>
+              <p class="body-md">Cards can be repeated vertically or in two-column rows. Keep internal spacing consistent to preserve the terminal rhythm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="css">
+      <div class="section-card">
+        <div class="eyebrow">Production CSS tokens</div>
+        <h2 class="section-title">Starter CSS for the full site.</h2>
+        <p class="section-intro">This block is meant to be lifted directly into your project as a shared design foundation. It keeps the look coherent across landing pages, dashboard panels, and long-form info sections.</p>
+
+        <div class="token-grid">
+          <div class="token">
+            <div class="label">Core variables</div>
+<pre>:root {
+  --bg-0: #020814;
+  --bg-1: #071324;
+  --bg-2: #0b1c31;
+  --bg-3: #102742;
+  --panel: rgba(8, 23, 43, 0.9);
+  --panel-strong: rgba(10, 28, 51, 0.96);
+  --line: rgba(121, 180, 255, 0.18);
+  --text: #eef4ff;
+  --muted: #9bb2cf;
+  --blue: #5ab6ff;
+  --cyan: #6ae8ff;
+  --green: #29d3a2;
+  --gold: #f5cc67;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+}</pre>
+          </div>
+
+          <div class="token">
+            <div class="label">Page foundation</div>
+<pre>body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left,
+      rgba(84, 166, 255, 0.14), transparent 34%),
+    linear-gradient(180deg,
+      var(--bg-0) 0%, var(--bg-1) 28%, var(--bg-0) 100%);
+}
+
+.panel {
+  background: linear-gradient(180deg,
+    var(--panel) 0%, var(--panel-strong) 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+}</pre>
+          </div>
+
+          <div class="token">
+            <div class="label">Headings + body</div>
+<pre>h1 {
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+p, li {
+  color: var(--muted);
+  line-height: 1.7;
+}</pre>
+          </div>
+
+          <div class="token">
+            <div class="label">Buttons + chips</div>
+<pre>.btn-primary {
+  color: white;
+  border-radius: 999px;
+  border: 1px solid rgba(90, 182, 255, 0.65);
+  background: linear-gradient(135deg,
+    rgba(90,182,255,0.95), rgba(58,133,255,0.92));
+}
+
+.pill-green {
+  background: rgba(41, 211, 162, 0.13);
+  border: 1px solid rgba(41, 211, 162, 0.22);
+  color: #cbffef;
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Preceptress Health style guide · dark scientific UI · terminal-grade clarity
+    </div>
+  </main>
+</body>
+</html>
