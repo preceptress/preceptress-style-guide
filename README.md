@@ -73,7 +73,7 @@ https://YOUR_USERNAME.github.io/preceptress-style-guide/
 - add a landing page variant for researchers and foundations
 - add a lightweight token file for SwiftUI or React parity
 
-## Suggested positioning copy
+## Summary
 
 > Preceptress Health is building an AI-first interface for medical discovery. This repository documents the visual system behind that mission.
 
