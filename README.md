@@ -75,7 +75,7 @@ https://YOUR_USERNAME.github.io/preceptress-style-guide/
 
 ## Summary
 
-> Preceptress Health is building an AI-first interface for medical discovery. This repository documents the visual system behind that mission.
+> Preceptress.ai Health is building an AI-first interface for medical discovery. This repository documents the visual system behind that mission.
 
 ## Contact
 
