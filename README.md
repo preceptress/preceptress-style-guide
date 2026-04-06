@@ -1,4 +1,4 @@
-# Preceptress Health Style Guide
+# Preceptress.ai Health Style Guide
 
 ## 🌐 Live Style Guide
 
