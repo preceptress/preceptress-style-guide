@@ -83,6 +83,6 @@ https://YOUR_USERNAME.github.io/preceptress-style-guide/
 
 ## Contact
 
-- Site: `preceptress.ai`
-- Email: `info@preceptress.ai`
+- Site: `preceptress.design`
+- Email: `info@preceptress.design`
 
